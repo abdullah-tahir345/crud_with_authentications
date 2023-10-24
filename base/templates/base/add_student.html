@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>add_student</title>
+  </head>
+  <body class="bg-dark">
+
+    {% include './navbar.html' %}
+
+    <h3 class='text-center my-5 text-white'>Add Student</h3>
+    <div class='container'>
+        <div class='row justify-content-center'>
+            <div class='col-md-6'>
+                <div class='card'>
+                    <div class='card-body'>
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="text-danger">
+                                {% if messages %}
+                                <ul class="messages">
+                                    {% for message in messages %}
+                                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+                            </div>
+                            <div class="mb-3">
+                                <b><label for="name" class="form-label">Name</label></b>
+                                <input type="name" name='name' class="form-control" id="name" aria-describedby="uame" placeholder="Enter Student Name" Required>
+                            </div>
+                            <div class="mb-3">
+                                <b><label for="roll" class="form-label">Roll</label></b>
+                                <input type="roll" name='roll' class="form-control" id="roll" aria-describedby="roll" placeholder="Enter Student Roll" Required>
+                            </div>
+                            <div class="mb-3">
+                                <b><label for="phone" class="form-label">Phone</label></b>
+                                <input type="phone" name='phone' class="form-control" id="phone" aria-describedby="phone" placeholder="Enter Student Phone" Required>
+                            </div>
+                            <div class="mb-3">
+                                <b><label for="email" class="form-label">Email</label></b>
+                                <input type="email" name='email' class="form-control" id="email" aria-describedby="email" placeholder="Enter Student Email" Required>
+                            </div>
+                            <div class="mb-3">
+                                <b><label for="address" class="form-label">Address</label></b>
+                                <input type="address" name='address' class="form-control" id="address" aria-describedby="address" placeholder="Enter Student Address" Required>
+                            </div>
+                              <div class="d-flex justify-content-center">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                              </div>
+                          </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
